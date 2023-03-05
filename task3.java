@@ -3,19 +3,30 @@ import java.util.Scanner;
 public class task3 {
     public static void main(String[] args) {
 
-        // System.err.println("Введите первое число: ");
         Scanner iScanner = new Scanner(System.in);
-        // Integer firstNum = iScanner.nextInt();
-        // System.err.println("Введите логический оператор: ");
-        // String logOperator = iScanner.next();
-        // System.err.println("Введите второе число: ");
-        // Integer secondNum = iScanner.nextInt();
-        String str = iScanner.nextLine();
+        System.err.println("Введите выражение через пробелы: ");
+        String inputUser = iScanner.nextLine();
         iScanner.close();
-        System.out.println(str);
-        System.out.println(str.split(" "));
 
+        String[] words = inputUser.split(" ");
+        int x = Integer.parseInt(words[0]);
+        int y = Integer.parseInt(words[2]);
 
+        switch (words[1]) {
+            case "+":
+                System.out.println(x + y);
+                break;
+            case "-":
+                System.out.println(x - y);
+                break;
+            case "*":
+                System.out.println(x * y);
+                break;
+            case "/":
+                System.out.println(x / y);
+                break;
+            default:
+                System.out.println("Неверный ввод!");
+        }
     }
-
 }
